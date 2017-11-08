@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>FCC Pomodoro</title>
+     <meta name="FCC Pomodoro Timer" content="DESCRIPTION">
+    <link rel="stylesheet" href="style.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+     <!--[if lt IE 9]>
+       <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+ </head>
+
+ <body>
+   <div id="top-container">
+      <div id="panel">
+        <div id="leftcomma"><i class="fa fa-quote-left fa-4x" aria-hidden="true" ></i></div>
+          <p> Short study intervals are named pomodoros, the plural in English of the Italian word pomodoro (tomato),
+          after the tomato-shaped kitchen timer that Francesco Cirillo used as a university student. </p>
+        <div id="rightcomma"><i class="fa fa-quote-right fa-4x" aria-hidden="true"></i></div>
+      </div>
+  </div>
+<div id=setclocktype>
+  <div class="buttons">
+  <button class="button2">&nbsp;Pomodoro</button>
+  <button class="button2">Short-Break</button>
+  <button class="button2">Long-Break</button>
+  </div>
+</div>
+
+  <div id="timer-container">
+    <div id="countdown">
+      <div class="buttons">
+      <button class="button1" id="plusClock"><i class="fa fa-plus fa-3x" aria-hidden="true"></i></button>
+      <button class="button1" id="minusClock"><i class="fa fa-minus fa-3x" aria-hidden="true"></i></button>
+      </div>
+    <div id="timer">
+    <span id="min">25</span>:<span id="sec">00</span>
+    </div>
+
+    <div class="buttons">
+      <button class="button" id="play">&nbsp;<i class="fa fa-play fa-4x" aria-hidden="true"></i></button>
+      <button class="button" id="pause">&nbsp;<i class="fa fa-pause fa-4x" aria-hidden="true"></i></button>
+      <button class="button" id="reset"><i class="fa fa-undo fa-4x" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+
+
+
+  <div id="fcc">
+    <h1>FCC Pomodoro Clock</h1>
+  </div>
+
+
+
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="index.js"></script>
+ </body>
+
+ </html>

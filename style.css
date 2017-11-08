@@ -1,0 +1,91 @@
+body{
+  background-color: #4abdac;
+}
+
+#top-container {
+
+  display: flex;
+  justify-content: center;
+}
+
+p:nth-child(2) {
+color: #fc4a1a;
+padding: 0 5% 0 5%;
+font-size: 150%;
+text-align: right;
+text-transform: capitalize;
+}
+
+#panel {
+
+  font-family: 'Merriweather', serif;
+  width: 70%;
+  margin-top: 2%;
+
+}
+
+#leftcomma{
+  padding-left: 2%;
+  text-align: left;
+  color: #dfdce3;
+}
+#rightcomma{
+  padding-right: 2%;
+  text-align: right;
+  color: #dfdce3;
+}
+#setclocktype{
+  display: flex;
+  justify-content: center;
+}
+
+
+#timer-container{
+  display: flex;
+  justify-content: center;
+
+}
+#countdown{
+  font-size: 85px;
+  font-weight: bold;
+  color: white;
+  font-family: 'PT Mono', monospace;
+  text-align: center;
+}
+
+.button{
+  background-color: #4abdac;
+  border: none;
+  color: #f7b733;
+  cursor: pointer;
+  text-align: center;
+}
+.button1{
+  background-color: #4abdac;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+.button2{
+  font-family: 'Merriweather', serif;
+  background-color:  #4abdac;
+  border: none;
+  color: #f7b733;
+  cursor: pointer;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/*.buttons{
+  margin-top: -25px;
+}*/
+#fcc{
+  position: fixed;
+    bottom: 0;
+    right: 3%;
+    color: white;
+    font-size: 120%;
+    font-family: 'Merriweather', serif;
+}
