@@ -67,6 +67,12 @@ text-transform: capitalize;
   cursor: pointer;
   text-align: center;
 }
+.button1a{
+  background-color: #4abdac;
+  border: none;
+  color:  #4abdac;
+  text-align: center;
+  }
 .button2{
   font-family: 'Merriweather', serif;
   background-color:  #4abdac;
@@ -76,7 +82,7 @@ text-transform: capitalize;
   text-align: center;
   font-size: 26px;
   font-weight: bold;
-}
+  }
 
 /*.buttons{
   margin-top: -25px;
