@@ -2,12 +2,14 @@ var Pomodoro = {
   startCount: 25,
   break : 5,
   countDown: 0,
+  breakLength:5
 }
 
 $(document).ready(function(){
-var sc= Pomodoro.startCount
+var sc= Pomodoro.startCount;
+var bl = Pomodoro.breakLength;
 $('#min').html(sc);
-
+$("#breakTime").hide();
 $("#plusClock").click(function(){         //timer goes up
   sc += 1;
   $("#min").html(sc);
@@ -21,8 +23,7 @@ $("#minusClock").click(function(){        //timer goes down and stops at 1
 })
 $("#play").click(function() {                   //play onClick deactivate play +&- buttons
   $("#play").attr("disabled", true);
-  $("#plusClock").attr("disabled", true);
-  $("#minusClock").attr("disabled", true);
+  disabledClock()
   console.log(sc)
   var countSec = (sc*60)-1;
   $("#sec").html(countSec%60);
@@ -38,50 +39,88 @@ $("#play").click(function() {                   //play onClick deactivate play +
       }else{
       $("#sec").html(countSec%60);
       $("#min").html(Math.floor(countSec/60))};
-    }else if (countSec === 0) {
-      alert("Take A Break!")
-      clearInterval(countDown);
-    }
+      }else if (countSec == 0) {
+        clearInterval(countDown);
+      breakHowLong();    //replace with function determining break length
+      $("#play").click();
+      };
+
   },1000)
   $("#pause").click(function () {
     clearInterval(countDown);
   console.log(sc);
   $("#play").attr("disabled", false);
+
   })
-  $("#reset").click(function(){
-    clearInterval(countDown);
-    $("#min").html(25);
-    $("#sec").html("00");
-   sc = 25
-    console.log(sc);
-    $("#play").attr("disabled", false);
-    $("#plusClock").attr("disabled", false);
-    $("#minusClock").attr("disabled", false);
-  })
+  $("#reset").click(reset)
 
 })
 
 $("#short").click(function(){
-  $("#plusClock").attr("disabled", true);
-  $("#minusClock").attr("disabled", true);
-  $(".button1").addClass("button1a");
-  sc = 5;
-  $("#min").html(5);
+  bl = 5;
+  console.log(bl);
 });
 $("#long").click(function(){
-  $("#plusClock").attr("disabled", true);
-  $("#minusClock").attr("disabled", true);
+  bl = 10;
+  console.log(bl);
+});
+
+$("#pomodoro").click(reset);
+
+function breakHowLong() {
+if (bl == 5){
+  short()
+} else if (bl = 10) {
+  long()
+}
+};
+
+function short(){
+  $("#pause").click();
+  console.log(sc);
+  disabledClock()
+  $(".button1").addClass("button1a");
+  sc = 5;
+  bl = 5;
+  updateTimer()
+  $("#breakTime").show();
+};
+
+function long(){
+  $("#pause").click();
+  disabledClock()
   $(".button1").addClass("button1a");
   sc = 10;
-  $("#min").html(10);
-});
-$("#pomodoro").click(function(){
-  $("#plusClock").attr("disabled", false);
-  $("#minusClock").attr("disabled", false);
+  bl=10;
+  updateTimer()
+  $("#breakTime").show();
+};
+
+function reset(){
+  $("#pause").click();
+  enabledClock()
   $(".button1").removeClass("button1a");
   sc = 25;
-  $("#min").html(25);
-});
+  updateTimer()
+  $("#breakTime").hide();
+}
+
+
+function disabledClock() {
+  $("#plusClock").attr("disabled", true);
+  $("#minusClock").attr("disabled", true);
+};
+
+function enabledClock() {
+  $("#plusClock").attr("disabled", false);
+  $("#minusClock").attr("disabled", false);
+};
+
+function updateTimer(){
+  $("#min").html(sc);
+  $("#sec").html("00");
+};
+
 
 
 });
